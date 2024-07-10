@@ -1,5 +1,6 @@
 import { MapPin, Calendar, Settings2, ArrowRight } from "lucide-react";
 import { Button } from "../../../components/button";
+import { Input } from "../../../components/input";
 
 interface DestinationAndDateProps {
   isGuestsInputOpen: boolean;
@@ -14,19 +15,20 @@ export function DestinationAndDateField({
     <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
       <div className="flex flex-1 items-center gap-2">
         <MapPin className="size-5 text-zinc-400" />
-        <input
+        <Input
           disabled={isGuestsInputOpen}
-          className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
           type="text"
+          textSize="large"
           placeholder="Para onde você vai?"
         />
       </div>
 
       <div className="flex items-center gap-2">
         <Calendar className="size-5 text-zinc-400" />
-        <input
+        <Input
           disabled={isGuestsInputOpen}
-          className="bg-transparent text-lg placeholder-zinc-400 w-40 outline-none"
+          ofSize="small"
+          textSize="large"
           type="text"
           placeholder="Quando?"
         />

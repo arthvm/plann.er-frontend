@@ -1,6 +1,7 @@
 import { X, AtSign, Plus } from "lucide-react";
 import { FormEvent } from "react";
 import { Button } from "../../components/button";
+import { Input } from "../../components/input";
 
 interface InviteGuestModalProps {
   toggleGuestsModal: () => void;
@@ -59,11 +60,10 @@ export function InviteGuestModal({
         >
           <div className="px-2 flex items-center flex-1 gap-2">
             <AtSign className="size-5 text-zinc-400" />
-            <input
+            <Input
               type="email"
               name="email"
               placeholder="Digite o e-mail do convidado"
-              className="bg-transparent text-base placeholder-zinc-400 outline-none flex-1"
             />
           </div>
 

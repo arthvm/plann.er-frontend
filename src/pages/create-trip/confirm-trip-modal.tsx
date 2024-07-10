@@ -1,6 +1,7 @@
 import { X, User, Mail } from "lucide-react";
 import { FormEvent } from "react";
 import { Button } from "../../components/button";
+import { Input } from "../../components/input";
 
 interface ConfirmTripModalProps {
   toggleConfirmTripModal: () => void;
@@ -41,20 +42,15 @@ export function ConfirmTripModal({
           <div className="space-y-2">
             <div className="h-14 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center justifiy-center gap-2">
               <User className="size-5 text-zinc-400" />
-              <input
-                name="name"
-                placeholder="Seu nome completo"
-                className="bg-transparent text-base placeholder-zinc-400 outline-none flex-1"
-              />
+              <Input name="name" placeholder="Seu nome completo" />
             </div>
 
             <div className="h-14 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center justifiy-center gap-2">
               <Mail className="size-5 text-zinc-400" />
-              <input
+              <Input
                 type="email"
                 name="email"
                 placeholder="Seu e-mail pessoal"
-                className="bg-transparent text-base placeholder-zinc-400 outline-none flex-1"
               />
             </div>
           </div>
