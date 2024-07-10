@@ -41,7 +41,6 @@ export function ConfirmTripModal({
             <div className="h-14 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center justifiy-center gap-2">
               <User className="size-5 text-zinc-400" />
               <input
-                type="name"
                 name="name"
                 placeholder="Seu nome completo"
                 className="bg-transparent text-base placeholder-zinc-400 outline-none flex-1"
