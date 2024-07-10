@@ -111,7 +111,9 @@ export function App() {
               >
                 <UserRoundPlus className="size-5 text-zinc-400" />
                 <span className="text-lg text-zinc-400 flex-1">
-                  Quem estará na viagem?
+                  {emailsToInvite.length > 0
+                    ? `${emailsToInvite.length} pessoa(s) convidada(s)`
+                    : "Quem estará na viagem?"}
                 </span>
               </button>
 
