@@ -10,16 +10,19 @@ import { format } from "date-fns";
 interface DestinationAndDateProps {
   isGuestsInputOpen: boolean;
   toggleGuestsInput: () => void;
+  setDestination: (destination: string) => void;
+  eventStartAndEndDates: DateRange | undefined;
+  setEventStartAndEndDates: (dates: DateRange | undefined) => void;
 }
 
 export function DestinationAndDateField({
   isGuestsInputOpen,
   toggleGuestsInput,
+  setDestination,
+  eventStartAndEndDates,
+  setEventStartAndEndDates,
 }: DestinationAndDateProps) {
   const [isDatePickerOpen, setDatePickerOpen] = useState(false);
-  const [eventStartAndEndDates, setEventStartAndEndDates] = useState<
-    DateRange | undefined
-  >();
 
   function toggleDatePicker() {
     setDatePickerOpen(!isDatePickerOpen);
@@ -39,6 +42,7 @@ export function DestinationAndDateField({
       <div className="flex flex-1 items-center gap-2">
         <MapPin className="size-5 text-zinc-400" />
         <Input
+          onChange={(event) => setDestination(event.target.value)}
           disabled={isGuestsInputOpen}
           type="text"
           textSize="large"
