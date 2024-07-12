@@ -140,6 +140,8 @@ export function CreateTripPage() {
           setOwnerEmail={setOwnerEmail}
           toggleConfirmTripModal={toggleConfirmTripModal}
           createTrip={createTrip}
+          destination={destination}
+          selectedDate={eventStartAndEndDates}
         />
       )}
     </div>
