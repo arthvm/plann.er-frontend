@@ -1,11 +1,12 @@
-import { MapPin, Calendar, Settings2, ArrowRight, X } from "lucide-react";
-import { Button } from "../../../components/button";
-import { Input } from "../../../components/input";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { ArrowRight, Calendar, MapPin, Settings2 } from "lucide-react";
 import { useState } from "react";
 import { DateRange, DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import { ptBR } from "date-fns/locale";
-import { format } from "date-fns";
+import { Button } from "../../../components/button";
+import { Input } from "../../../components/input";
+import { Modal } from "../../../components/modal";
 
 interface DestinationAndDateProps {
   isGuestsInputOpen: boolean;
@@ -62,28 +63,19 @@ export function DestinationAndDateField({
       </button>
 
       {isDatePickerOpen && (
-        <div className="inset-0 bg-black/60 fixed flex items-center justify-center">
-          <div className="bg-zinc-900 shadow-shape rounded-xl px-6 py-5 space-y-5">
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <h2 className="text-white font-semibold text-lg">
-                  Selecione a data
-                </h2>
-                <button type="button" onClick={toggleDatePicker}>
-                  <X className="size-5 text-zinc-400" />
-                </button>
-              </div>
-            </div>
-
-            <DayPicker
-              selected={eventStartAndEndDates}
-              onSelect={setEventStartAndEndDates}
-              locale={ptBR}
-              disabled={{ before: new Date() }}
-              mode="range"
-            />
-          </div>
-        </div>
+        <Modal
+          size="fit"
+          title="Selecione a data"
+          toggleModal={toggleDatePicker}
+        >
+          <DayPicker
+            selected={eventStartAndEndDates}
+            onSelect={setEventStartAndEndDates}
+            locale={ptBR}
+            disabled={{ before: new Date() }}
+            mode="range"
+          />
+        </Modal>
       )}
 
       <div className="w-px h-6 bg-zinc-800" />
